@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terminal Prompt Generator</title>
+<style>
+  :root {
+    --term-green: #00ff41;
+    --term-bg: #0d0d0d;
+    --term-glow: 0 0 10px rgba(0, 255, 65, 0.5);
+  }
+  
+  body {
+    background-color: var(--term-bg);
+    color: var(--term-green);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    text-shadow: var(--term-glow);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .machine-container {
+    border: 2px solid var(--term-green);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--term-glow);
+    background: #000;
+  }
+
+  .slots {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .slot {
+    width: 180px;
+    height: 120px;
+    border: 1px dashed var(--term-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #050505;
+    position: relative;
+  }
+
+  .slot-title {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+
+  .slot-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px;
+    text-shadow: var(--term-glow);
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+  }
+
+  button#lever {
+    background: transparent;
+    color: var(--term-green);
+    border: 2px solid var(--term-green);
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    box-shadow: var(--term-glow);
+  }
+
+  button#lever:hover {
+    background: var(--term-green);
+    color: #000;
+  }
+
+  button#lever:disabled {
+    border-color: #004411;
+    color: #004411;
+    box-shadow: none;
+    cursor: not-allowed;
+    background: transparent;
+  }
+
+  .output-area {
+    margin-top: 3rem;
+    display: flex;
+    gap: 10px;
+    width: 90%;
+    max-width: 800px;
+  }
+
+  input#result-text {
+    flex-grow: 1;
+    background: #000;
+    color: var(--term-green);
+    border: 1px solid var(--term-green);
+    padding: 15px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-shadow: inset var(--term-glow);
+  }
+
+  button#copy-btn {
+    background: transparent;
+    color: var(--term-green);
+    border: 1px solid var(--term-green);
+    padding: 0 20px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  button#copy-btn:hover {
+    background: var(--term-green);
+    color: #000;
+  }
+</style>
+</head>
+<body>
+
+<h1>[ CREATIVE_OVERRIDE ]</h1>
+
+<div class="machine-container">
+  <div class="slots">
+    <div class="slot"><div class="slot-title">[SUBJECT]</div><div class="slot-value" id="slot1">---</div></div>
+    <div class="slot"><div class="slot-title">[LOCATION]</div><div class="slot-value" id="slot2">---</div></div>
+    <div class="slot"><div class="slot-title">[ACTION]</div><div class="slot-value" id="slot3">---</div></div>
+    <div class="slot"><div class="slot-title">[STYLE]</div><div class="slot-value" id="slot4">---</div></div>
+  </div>
+  <div class="controls">
+    <button id="lever">EXECUTE SPIN //_</button>
+  </div>
+</div>
+
+<div class="output-area">
+  <input type="text" id="result-text" readonly placeholder="Awaiting generation sequence...">
+  <button id="copy-btn" title="Copy to Clipboard">📋 COPY</button>
+</div>
+
+<script>
+  // --- 100 UNIQUE PARAMETERS PER CATEGORY ---
+  const subjects = [
+    "Astronaut", "Samurai", "Cyborg", "Wizard", "Detective", "Gargoyle", "AI Drone", "Ghost", "Pharaoh", "Time Traveler",
+    "Vampire", "Clockwork Automaton", "Hacker", "Deep Sea Diver", "Alien Botanist", "Centaur", "Mad Scientist", "Knight", "Ninja", "Pirate",
+    "Bounty Hunter", "Druid", "Hologram", "Yeti", "Valkyrie", "Sorceress", "Alchemist", "Gladiator", "Sniper", "Shaman",
+    "Mutant", "Angel", "Demon", "Banshee", "Minotaur", "Android", "Cultist", "Beekeeper", "Chef", "Blacksmith",
+    "Jester", "Astronaut's Dog", "Mecha Pilot", "Plague Doctor", "Space Marine", "Oracle", "Sphinx", "Harpy", "Golem", "Lich",
+    "Mermaid", "Cyber-Ninja", "DJ", "Monk", "Inventor", "Fortune Teller", "Warlock", "Ranger", "Paladin", "Necromancer",
+    "Bard", "Spy", "Mechanic", "Archaeologist", "Sentinel", "Titan", "Shapeshifter", "Chimera", "Basilisk", "Kraken",
+    "Wendigo", "Cyborg T-Rex", "Living Statue", "Shadow Entity", "Neon Demon", "Plasma Elemental", "Bio-Engineer", "Space Pirate", "Lunar Colonist", "Quantum Physicist",
+    "Time Cop", "Dimensional Drifter", "Cybernetic Surgeon", "Wasteland Scavenger", "Tech-Priest", "Astral Projector", "Dream Eater", "Sun God", "Moon Goddess", "Cursed Doll",
+    "Haunted Armor", "Sentient Sword", "Hoverbike Racer", "Galactic Emperor", "Rebel Leader", "Street Samurai", "Data Runner", "Synth Singer", "Void Walker", "Mage"
+  ];
+
+  const locations = [
+    "Cyberpunk City", "Ancient Ruins", "Mars Colony", "Enchanted Forest", "Submarine", "Floating Island", "Volcanic Crater", "Abandoned Mall", "Space Station", "Crystal Cave",
+    "Victorian Library", "Desert Oasis", "Neon Alleyway", "Glacier Tunnels", "Giant Treehouse", "Gothic Cathedral", "Steampunk Dirigible", "Lunar Base", "Sunken City", "Pirate Ship",
+    "Haunted Mansion", "Zenith Observatory", "Clockwork Factory", "Bioluminescent Swamp", "Wasteland Scrapyard", "High-Speed Train", "Zero-Gravity Chamber", "Dwarven Mine", "Elven Sanctuary", "Orbital Ring",
+    "Post-Apocalyptic Diner", "Hidden Dojo", "Secret Laboratory", "Cloud City", "Subterranean Vault", "Alien Jungle", "Meteor Crash Site", "Virtual Reality Grid", "Time Paradox Zone", "Quantum Realm",
+    "Overgrown Skyscraper", "Frozen Tundra", "Saharan Pyramid", "Celtic Stonehenge", "Aztec Temple", "Feudal Japanese Castle", "WWI Trench", "Wild West Saloon", "Prohibition Speakeasy", "Retro Arcade",
+    "Cybernetics Clinic", "Neon Nightclub", "Rooftop Garden", "Hovercraft Dock", "Holographic Arena", "Deep Space Nebula", "Black Hole Accretion Disk", "Dyson Sphere", "Intergalactic Market", "Asteroid Mining Camp",
+    "Fairy Tale Castle", "Goblin Market", "Troll Bridge", "Dragon's Lair", "Witch's Hut", "Mermaid Cove", "Kelp Forest", "Coral Reef", "Abyssal Trench", "Arctic Research Station",
+    "Himalayan Monastery", "Amazonian Temple", "Savannah Watering Hole", "Grand Canyon Edge", "Niagara Falls Cave", "Yellowstone Geyser", "Bioluminescent Bay", "Salt Flats", "Redwood Forest Canopy", "Abandoned Theme Park",
+    "Ghost Town", "Drive-in Movie Theater", "1950s Diner", "Cold War Bunker", "Secret Agent Headquarters", "Submarine Pen", "Aircraft Carrier Flight Deck", "Zeppelin Hangar", "Victorian Train Station", "London Fog Street",
+    "Parisian Catacombs", "Venetian Canal", "Roman Colosseum", "Egyptian Tomb", "Incan Citadel", "Mountaintop Shrine", "Bamboo Forest", "Cherry Blossom Garden", "Zen Rock Garden", "Shinto Torii Gate"
+  ];
+
+  const actions = [
+    "Meditating", "Fighting", "Brewing coffee", "Reading a map", "Hacking a mainframe", "Juggling", "Performing surgery", "Forging a sword", "Dancing", "Deciphering code",
+    "Taming a beast", "Planting seeds", "Defusing a bomb", "Painting a mural", "Tuning an instrument", "Casting a spell", "Piloting a mech", "Repairing an engine", "Cooking a meal", "Scavenging for parts",
+    "Writing a letter", "Playing chess", "Interrogating a suspect", "Picking a lock", "Sneaking through shadows", "Climbing a cliff", "Swimming with sharks", "Flying a kite", "Assembling a weapon", "Harvesting crops",
+    "Brewing potions", "Reading tarot cards", "Summoning a spirit", "Banishing a demon", "Conducting an orchestra", "Singing a lullaby", "Carving wood", "Sculpting clay", "Blowing glass", "Weaving a tapestry",
+    "Tattooing skin", "Designing clothes", "Blueprinting a city", "Programming an AI", "Smelting iron", "Panning for gold", "Riding a horse", "Driving a tank", "Surfing a wave", "Skateboarding down a hill",
+    "Bungee jumping", "Skydiving", "Scuba diving", "Rock climbing", "Parkour running", "Fencing", "Boxing", "Wrestling", "Archery", "Throwing knives",
+    "Jousting", "Dueling with pistols", "Sniper aiming", "Reloading a shotgun", "Throwing a grenade", "Dodging lasers", "Blocking with a shield", "Parrying a sword", "Casting a fireball", "Healing a wound",
+    "Resurrecting the dead", "Mind-controlling an enemy", "Teleporting away", "Invisibility cloaking", "Stopping time", "Reversing gravity", "Creating a black hole", "Bending elements", "Shapeshifting forms", "Absorbing energy",
+    "Drinking tea", "Eating noodles", "Smoking a pipe", "Flipping a coin", "Shuffling cards", "Rolling dice", "Looking through binoculars", "Stargazing with a telescope", "Examining via microscope", "Taking a photograph",
+    "Developing film", "Editing a video", "Broadcasting a radio signal", "Typing on a typewriter", "Writing with a quill", "Painting miniatures", "Assembling a puzzle", "Knitting a scarf", "Petting a cat", "Walking a dog"
+  ];
+
+  const styles = [
+    "Watercolor", "Synthwave", "Steampunk", "Oil Painting", "Charcoal Sketch", "Pixel Art", "Low Poly 3D", "Anime", "Cubism", "Gothic",
+    "Art Nouveau", "Cyberpunk", "Photorealistic", "Cel Shaded", "Noir", "Pop Art", "Origami", "Vector Art", "Voxel Art", "Impasto",
+    "Fresco", "Lithograph", "Woodcut Print", "Screen Print", "Risograph", "Glitch Art", "Vaporwave", "Retrowave", "Dieselpunk", "Atompunk",
+    "Biopunk", "Solarpunk", "High Fantasy", "Dark Fantasy", "Grimdark", "Whimsical", "Surrealism", "Dadaism", "Abstract Expressionism", "Minimalism",
+    "Maximalism", "Baroque", "Rococo", "Renaissance", "Neoclassicism", "Romanticism", "Impressionism", "Post-Impressionism", "Pointillism", "Fauvism",
+    "Constructivism", "Bauhaus", "Art Deco", "Mid-Century Modern", "Psychedelic", "Grunge", "Punk Rock", "Heavy Metal Album Cover", "Comic Book", "Manga",
+    "Ukiyo-e", "Sumi-e", "Thangka", "Miniature Persian Painting", "Byzantine Mosaic", "Stained Glass", "Tapestry", "Embroidery", "Paper Quilling", "Claymation",
+    "Stop Motion", "Double Exposure", "Infrared Photography", "Cyanotype", "Daguerreotype", "Polaroid", "Sepia Tone", "Monochromatic", "Duotone", "Neon Glow",
+    "Holographic", "Iridescent", "Pearlescent", "Metallic", "Matte", "Glossy", "Celluloid Film", "VHS Aesthetic", "CRT Monitor Effect", "ASCII Art",
+    "Blueprint", "Chalkboard Drawing", "Whiteboard Sketch", "Napkin Doodle", "Tattoo Flash", "Graffiti", "Street Art", "Mural", "Cave Painting", "Hieroglyphics"
+  ];
+
+  // --- APPLICATION LOGIC ---
+  const wheels = [subjects, locations, actions, styles];
+  const slotElements = [
+    document.getElementById('slot1'),
+    document.getElementById('slot2'),
+    document.getElementById('slot3'),
+    document.getElementById('slot4')
+  ];
+  
+  const lever = document.getElementById('lever');
+  const resultText = document.getElementById('result-text');
+  const copyBtn = document.getElementById('copy-btn');
+
+  let isSpinning = false;
+
+  function getRandomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  lever.addEventListener('click', () => {
+    if (isSpinning) return;
+    
+    isSpinning = true;
+    lever.disabled = true;
+    lever.innerText = "PROCESSING...";
+    resultText.value = "";
+    
+    const intervals = [];
+    const finalValues = [];
+    // Staggered stop times so wheels stop one by one (1s, 1.5s, 2s, 2.5s)
+    const stopTimes = [1000, 1500, 2000, 2500];
+
+    // Start rapid spinning animation
+    slotElements.forEach((slot, index) => {
+      intervals[index] = setInterval(() => {
+        slot.innerText = getRandomItem(wheels[index]);
+      }, 60); 
+    });
+
+    // Stop wheels according to schedule
+    slotElements.forEach((slot, index) => {
+      setTimeout(() => {
+        clearInterval(intervals[index]);
+        const finalValue = getRandomItem(wheels[index]);
+        slot.innerText = finalValue;
+        finalValues[index] = finalValue;
+
+        // When the final wheel stops, wrap up
+        if (index === slotElements.length - 1) {
+          isSpinning = false;
+          lever.disabled = false;
+          lever.innerText = "EXECUTE SPIN //_";
+          resultText.value = finalValues.join(", ");
+        }
+      }, stopTimes[index]); 
+    });
+  });
+
+  // Copy to clipboard logic
+  copyBtn.addEventListener('click', () => {
+    if (!resultText.value) return;
+    navigator.clipboard.writeText(resultText.value).then(() => {
+      const originalText = copyBtn.innerText;
+      copyBtn.innerText = "✔️ COPIED";
+      setTimeout(() => copyBtn.innerText = originalText, 2000);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  });
+</script>
+</body>
+</html>
