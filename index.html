@@ -278,15 +278,33 @@
   });
 
   // Copy to clipboard logic
-  copyBtn.addEventListener('click', () => {
+copyBtn.addEventListener('click', async () => {
     if (!resultText.value) return;
-    navigator.clipboard.writeText(resultText.value).then(() => {
-      const originalText = copyBtn.innerText;
+    
+    const originalText = copyBtn.innerText;
+    const showSuccess = () => {
       copyBtn.innerText = "✔️ COPIED";
       setTimeout(() => copyBtn.innerText = originalText, 2000);
-    }).catch(err => {
-      console.error('Failed to copy: ', err);
-    });
+    };
+
+    try {
+      // 1. Try the modern Clipboard API first
+      await navigator.clipboard.writeText(resultText.value);
+      showSuccess();
+    } catch (err) {
+      // 2. If blocked by iframe security, use the legacy fallback
+      try {
+        resultText.select();
+        resultText.setSelectionRange(0, 99999); // Needed for mobile
+        document.execCommand('copy');
+        showSuccess();
+        window.getSelection().removeAllRanges(); // Deselect text after copying
+      } catch (fallbackErr) {
+        console.error('Both copy methods failed: ', fallbackErr);
+        copyBtn.innerText = "❌ ERROR";
+        setTimeout(() => copyBtn.innerText = originalText, 2000);
+      }
+    }
   });
 </script>
 </body>
