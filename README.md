@@ -16,7 +16,7 @@ This tool generates highly unique, randomized prompts by combining four distinct
 
 ## 🔗 Live Demo
 
-**[Click here to try the generator live!]** *(Link your GitHub Pages URL here, e.g., https://yourusername.github.io/your-repo-name/)*
+**[Click here to try the generator live!]**  https://andsni.github.io/creativeTerminal/
 
 ## How to Use
 
