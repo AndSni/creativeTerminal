@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,7 +166,7 @@
 </div>
 
 <script>
-  // --- 100 UNIQUE PARAMETERS PER CATEGORY ---
+  // --- MASSIVELY EXPANDED UNIQUE PARAMETERS ---
   const subjects = [
     "Astronaut", "Samurai", "Cyborg", "Wizard", "Detective", "Gargoyle", "AI Drone", "Ghost", "Pharaoh", "Time Traveler",
     "Vampire", "Clockwork Automaton", "Hacker", "Deep Sea Diver", "Alien Botanist", "Centaur", "Mad Scientist", "Knight", "Ninja", "Pirate",
@@ -178,7 +177,26 @@
     "Bard", "Spy", "Mechanic", "Archaeologist", "Sentinel", "Titan", "Shapeshifter", "Chimera", "Basilisk", "Kraken",
     "Wendigo", "Cyborg T-Rex", "Living Statue", "Shadow Entity", "Neon Demon", "Plasma Elemental", "Bio-Engineer", "Space Pirate", "Lunar Colonist", "Quantum Physicist",
     "Time Cop", "Dimensional Drifter", "Cybernetic Surgeon", "Wasteland Scavenger", "Tech-Priest", "Astral Projector", "Dream Eater", "Sun God", "Moon Goddess", "Cursed Doll",
-    "Haunted Armor", "Sentient Sword", "Hoverbike Racer", "Galactic Emperor", "Rebel Leader", "Street Samurai", "Data Runner", "Synth Singer", "Void Walker", "Mage"
+    "Haunted Armor", "Sentient Sword", "Hoverbike Racer", "Galactic Emperor", "Rebel Leader", "Street Samurai", "Data Runner", "Synth Singer", "Void Walker", "Mage",
+    "Capybara", "Axolotl", "Honey Badger", "Sloth", "Pangolin", "Tardigrade", "Platypus", "Narwhal", "Komodo Dragon", "Shoebill Stork",
+    "Red Panda", "Fennec Fox", "Mantis Shrimp", "Blobfish", "Goblin Shark", "Aye-Aye", "Quokka", "Leafy Seadragon", "Okapi", "Saiga Antelope",
+    "Barista", "Plumber", "Dentist", "Librarian", "Bus Driver", "Janitor", "Mail Carrier", "Cashier", "Farmer", "Teacher",
+    "Electrician", "Carpenter", "Baker", "Butcher", "Tailor", "Cobbler", "Optometrist", "Florist", "Landscaper", "Crossing Guard",
+    "Chupacabra", "Mothman", "Jackalope", "Jersey Devil", "Loch Ness Monster", "Kappa", "Oni", "Tengu", "Kitsune", "Nue",
+    "Cerberus", "Pegasus", "Griffin", "Manticore", "Hydra", "Cyclops", "Siren", "Kelpie", "Wyvern", "Cockatrice",
+    "Sentient Toaster", "Floating Eyeball", "Living Brain in a Jar", "Animated Skeleton", "Possessed Scarecrow", "Voodoo Doll", "Talking Tree", "Sentient Cloud", "Living Shadow", "Poltergeist",
+    "Giant Spider", "Dire Wolf", "Sabertooth Tiger", "Woolly Mammoth", "Megalodon", "Pterodactyl", "Velociraptor", "Triceratops", "Brachiosaurus", "Stegosaurus",
+    "Grizzly Bear", "Polar Bear", "Silverback Gorilla", "Orangutan", "Chimpanzee", "Snow Leopard", "Cheetah", "Jaguar", "Panther", "Cougar",
+    "Bald Eagle", "Peregrine Falcon", "Great Horned Owl", "Vulture", "Condor", "Peacock", "Flamingo", "Penguin", "Ostrich", "Emu",
+    "Great White Shark", "Hammerhead Shark", "Orca", "Blue Whale", "Dolphin", "Octopus", "Giant Squid", "Jellyfish", "Seahorse", "Stingray",
+    "Crocodile", "Alligator", "King Cobra", "Rattlesnake", "Anaconda", "Boa Constrictor", "Chameleon", "Iguana", "Gecko", "Tortoise",
+    "Tarantula", "Scorpion", "Praying Mantis", "Centipede", "Millipede", "Goliath Beetle", "Luna Moth", "Monarch Butterfly", "Dragonfly", "Firefly",
+    "Roman Legionary", "Spartan Hoplite", "Viking Berserker", "Aztec Jaguar Warrior", "Egyptian Charioteer", "Persian Immortal", "Mongol Horse Archer", "Celtic Chieftain", "Zulu Impis", "Mayan Priest",
+    "Victorian Gentleman", "Flapper Girl", "Disco Dancer", "Punk Rocker", "Grunge Skater", "Beatnik", "Hippie", "Greaser", "Goth", "Emo Kid",
+    "Superhero", "Supervillain", "Sidekick", "Henchman", "Vigilante", "Mutant Scavenger", "Space Smuggler", "Galactic Senator", "Alien Ambassador", "Cyborg Assassin",
+    "Street Urchin", "Beggar", "King", "Queen", "Prince", "Princess", "Duke", "Duchess", "Baron", "Peasant",
+    "Gunslinger", "Sheriff", "Outlaw", "Saloon Girl", "Prospector", "Cavalry Officer", "Railroad Worker", "Pony Express Rider", "Bounty Hunter", "Snake Oil Salesman",
+    "Lumberjack", "Mountie", "Trapper", "Explorer", "Cartographer", "Mountaineer", "Spelunker", "Skydiver", "Deep Sea Fisherman", "Whaler"
   ];
 
   const locations = [
@@ -191,7 +209,21 @@
     "Fairy Tale Castle", "Goblin Market", "Troll Bridge", "Dragon's Lair", "Witch's Hut", "Mermaid Cove", "Kelp Forest", "Coral Reef", "Abyssal Trench", "Arctic Research Station",
     "Himalayan Monastery", "Amazonian Temple", "Savannah Watering Hole", "Grand Canyon Edge", "Niagara Falls Cave", "Yellowstone Geyser", "Bioluminescent Bay", "Salt Flats", "Redwood Forest Canopy", "Abandoned Theme Park",
     "Ghost Town", "Drive-in Movie Theater", "1950s Diner", "Cold War Bunker", "Secret Agent Headquarters", "Submarine Pen", "Aircraft Carrier Flight Deck", "Zeppelin Hangar", "Victorian Train Station", "London Fog Street",
-    "Parisian Catacombs", "Venetian Canal", "Roman Colosseum", "Egyptian Tomb", "Incan Citadel", "Mountaintop Shrine", "Bamboo Forest", "Cherry Blossom Garden", "Zen Rock Garden", "Shinto Torii Gate"
+    "Parisian Catacombs", "Venetian Canal", "Roman Colosseum", "Egyptian Tomb", "Incan Citadel", "Mountaintop Shrine", "Bamboo Forest", "Cherry Blossom Garden", "Zen Rock Garden", "Shinto Torii Gate",
+    "Supermarket Aisle", "Dental Clinic", "DMV Waiting Room", "Laundromat", "Bowling Alley", "Toll Booth", "Elevator", "Public Restroom", "Parking Garage", "Subway Car",
+    "Coffee Shop", "Fast Food Kitchen", "Movie Theater Front Row", "High School Gym", "College Dorm Room", "Office Cubicle", "Hospital Room", "Jail Cell", "Courtroom", "Post Office",
+    "Bus Stop", "Taxi Cab", "Airplane Cabin", "Cruise Ship Deck", "Ferry Boat", "Helicopter Cockpit", "Hot Air Balloon Basket", "Ski Lift", "Rollercoaster Car", "Ferris Wheel",
+    "Attic", "Basement", "Garage", "Living Room", "Kitchen", "Bedroom", "Bathroom", "Backyard Patio", "Front Porch", "Roof",
+    "Greenhouse", "Barn", "Silo", "Windmill", "Lighthouse", "Water Tower", "Oil Rig", "Construction Site", "Lumber Mill", "Steel Mill",
+    "Mangrove Forest", "Taiga", "Sand Dunes", "Oasis", "Tidal Pool", "Hot Spring", "Mud Volcano", "Limestone Cave", "Cenote", "Atoll",
+    "Inside a Computer Case", "Inside a Watch Mechanism", "On a Single Leaf", "Inside a Water Drop", "Microscopic Petridish", "Bloodstream", "Inside a Stomach", "Synaptic Gap", "Inside a Black Hole", "Event Horizon",
+    "Edge of the Universe", "The Fourth Dimension", "Inside a Dream", "Limbo", "Purgatory", "Valhalla", "Elysium", "Tartarus", "Nirvana", "The Akashic Records",
+    "Eiffel Tower Observation Deck", "Statue of Liberty Crown", "Taj Mahal Courtyard", "Machu Picchu Terraces", "Great Wall of China Watchtower", "Sydney Opera House Stage", "Mount Everest Summit", "Mariana Trench Bottom", "International Space Station Cupola", "South Pole Marker",
+    "Music Festival Main Stage", "Underground Rave", "Jazz Club", "Opera House Balcony", "Comedy Club", "Boxing Ring", "MMA Octagon", "Soccer Stadium", "Baseball Diamond", "Basketball Court",
+    "Golf Course Green", "Tennis Court", "Swimming Pool", "Skatepark", "Ice Rink", "Ski Slope", "Surf Break", "Climbing Wall", "Gymnasium", "Yoga Studio",
+    "Library Archives", "Museum Exhibit", "Art Gallery", "Planetarium", "Aquarium Tunnel", "Zoo Enclosure", "Botanical Garden", "Cemetery", "Mausoleum", "Catacomb",
+    "Toy Store", "Candy Shop", "Antique Store", "Pawn Shop", "Thrift Store", "Hardware Store", "Bookstore", "Record Store", "Comic Book Shop", "Arcade",
+    "Carnival Midway", "Circus Tent", "Magic Show Stage", "Puppet Theater", "Drive-Thru Window", "Car Wash", "Gas Station", "Mechanic Garage", "Junkyard", "Scrap Metal Press"
   ];
 
   const actions = [
@@ -204,7 +236,21 @@
     "Jousting", "Dueling with pistols", "Sniper aiming", "Reloading a shotgun", "Throwing a grenade", "Dodging lasers", "Blocking with a shield", "Parrying a sword", "Casting a fireball", "Healing a wound",
     "Resurrecting the dead", "Mind-controlling an enemy", "Teleporting away", "Invisibility cloaking", "Stopping time", "Reversing gravity", "Creating a black hole", "Bending elements", "Shapeshifting forms", "Absorbing energy",
     "Drinking tea", "Eating noodles", "Smoking a pipe", "Flipping a coin", "Shuffling cards", "Rolling dice", "Looking through binoculars", "Stargazing with a telescope", "Examining via microscope", "Taking a photograph",
-    "Developing film", "Editing a video", "Broadcasting a radio signal", "Typing on a typewriter", "Writing with a quill", "Painting miniatures", "Assembling a puzzle", "Knitting a scarf", "Petting a cat", "Walking a dog"
+    "Developing film", "Editing a video", "Broadcasting a radio signal", "Typing on a typewriter", "Writing with a quill", "Painting miniatures", "Assembling a puzzle", "Knitting a scarf", "Petting a cat", "Walking a dog",
+    "Doing taxes", "Peeling a potato", "Tying shoelaces", "Ironing a shirt", "Watering plants", "Changing a lightbulb", "Unclogging a toilet", "Pumping gas", "Mowing the lawn", "Raking leaves",
+    "Shoveling snow", "Taking out the trash", "Washing dishes", "Folding laundry", "Sweeping the floor", "Vacuuming", "Dusting shelves", "Cleaning windows", "Organizing a closet", "Making the bed",
+    "Brushing teeth", "Flossing", "Combing hair", "Shaving", "Applying makeup", "Trimming nails", "Taking a shower", "Taking a bath", "Putting on socks", "Buttoning a shirt",
+    "Waiting in line", "Waiting for a bus", "Stuck in traffic", "Riding an elevator", "Going up an escalator", "Swiping a credit card", "Signing a receipt", "Counting change", "Checking the mail", "Unboxing a package",
+    "Scrolling on a phone", "Texting a friend", "Taking a selfie", "Recording a voice memo", "Listening to a podcast", "Watching a tutorial", "Playing a mobile game", "Setting an alarm", "Checking the weather", "Looking at a map",
+    "Yawning", "Stretching", "Sneezing", "Coughing", "Hiccuping", "Burping", "Scratching an itch", "Rubbing eyes", "Cracking knuckles", "Sighing",
+    "Crying", "Laughing", "Smiling", "Frowning", "Pouting", "Winking", "Blinking", "Nodding", "Shaking head", "Shrugging",
+    "Waving hello", "Pointing a finger", "Giving a thumbs up", "Clapping hands", "High-fiving", "Fist-bumping", "Hugging", "Kissing", "Handshaking", "Bowing",
+    "Screaming", "Whispering", "Whistling", "Humming", "Beatboxing", "Clearing throat", "Gargling water", "Spitting", "Chewing gum", "Blowing a bubble",
+    "Petting a dog", "Feeding a cat", "Walking a ferret", "Cleaning a fish tank", "Saddling a horse", "Milking a cow", "Shearing a sheep", "Collecting eggs", "Catching a butterfly", "Swatting a fly",
+    "Biting an apple", "Sipping coffee", "Chugging water", "Eating a sandwich", "Licking an ice cream cone", "Using chopsticks", "Cutting steak", "Stirring soup", "Sprinkling salt", "Squeezing a lemon",
+    "Opening a jar", "Peeling a banana", "Cracking an egg", "Kneading dough", "Flipping a pancake", "Grating cheese", "Slicing bread", "Pouring wine", "Toasting glasses", "Washing hands",
+    "Opening an umbrella", "Putting on sunglasses", "Zipping up a jacket", "Tying a necktie", "Putting on a hat", "Taking off boots", "Buckling a seatbelt", "Adjusting a rearview mirror", "Turning a steering wheel", "Honking a horn",
+    "Changing a tire", "Checking engine oil", "Washing a car", "Pumping up a bicycle tire", "Locking a door", "Turning a key", "Knocking on a door", "Ringing a doorbell", "Looking through a peephole", "Opening a window"
   ];
 
   const styles = [
@@ -217,7 +263,44 @@
     "Ukiyo-e", "Sumi-e", "Thangka", "Miniature Persian Painting", "Byzantine Mosaic", "Stained Glass", "Tapestry", "Embroidery", "Paper Quilling", "Claymation",
     "Stop Motion", "Double Exposure", "Infrared Photography", "Cyanotype", "Daguerreotype", "Polaroid", "Sepia Tone", "Monochromatic", "Duotone", "Neon Glow",
     "Holographic", "Iridescent", "Pearlescent", "Metallic", "Matte", "Glossy", "Celluloid Film", "VHS Aesthetic", "CRT Monitor Effect", "ASCII Art",
-    "Blueprint", "Chalkboard Drawing", "Whiteboard Sketch", "Napkin Doodle", "Tattoo Flash", "Graffiti", "Street Art", "Mural", "Cave Painting", "Hieroglyphics"
+    "Blueprint", "Chalkboard Drawing", "Whiteboard Sketch", "Napkin Doodle", "Tattoo Flash", "Graffiti", "Street Art", "Mural", "Cave Painting", "Hieroglyphics",
+    "Linocut", "Etching", "Engraving", "Mezzotint", "Aquatint", "Drypoint", "Monotype", "Collograph", "Block Print", "Rubber Stamp Art",
+    "Ballpoint Pen", "Fountain Pen", "Gel Pen", "Marker", "Highlighter", "Colored Pencil", "Graphite", "Pastel", "Chalk", "Crayon",
+    "Gouache", "Acrylic", "Tempera", "Encaustic", "Casein", "Airbrush", "Spray Paint", "Finger Painting", "Sponge Painting", "Action Painting",
+    "Collage", "Decoupage", "Photomontage", "Assemblage", "Mixed Media", "Found Object Art", "Kinetic Sculpture", "Light Art", "Sound Art", "Performance Art Documentation",
+    "Textile Art", "Quilting", "Knitting", "Crochet", "Macrame", "Felting", "Weaving", "Cross-Stitch", "Needlepoint", "Lacemaking",
+    "Origami Architecture", "Kirigami", "Papier-Mache", "Cardboard Sculpture", "Papercut", "Silhouette", "Diorama", "Shadow Box", "Pop-up Book", "Book Carving",
+    "Ceramics", "Pottery", "Porcelain", "Terracotta", "Polymer Clay", "Plaster of Paris", "Concrete Casting", "Bronze Casting", "Ironwork", "Welded Steel",
+    "Wood Carving", "Whittling", "Marquetry", "Intarsia", "Pyrography", "Bamboo Weaving", "Basketry", "Bone Carving", "Ivory Carving Alternative", "Scrimshaw",
+    "Glassblowing", "Lampworking", "Fused Glass", "Stained Glass Window", "Sea Glass Mosaic", "Ice Sculpture", "Snow Sculpture", "Sandcastle", "Sand Art", "Kinetic Sand",
+    "Jewelry Making", "Beadwork", "Wire Wrapping", "Enameling", "Cloisonne", "Goldsmithing", "Silversmithing", "Leathercraft", "Tooling", "Shoemaking",
+    "Calligraphy", "Illuminated Manuscript", "Typography", "Hand Lettering", "Sign Painting", "Pinstriping", "Gold Leaf", "Gilding", "Mosaiculture", "Topiary",
+    "Bonsai", "Ikebana", "Terrarium", "Aquascaping", "Latte Art", "Pancake Art", "Bento Box Art", "Food Carving", "Sugar Sculpture", "Chocolate Art",
+    "Body Painting", "Henna", "Scarification Documentation", "Piercing Art", "Nail Art", "Makeup Artistry", "Hair Styling Art", "Floral Design", "Wreath Making", "Garland",
+    "Fractal Art", "Algorithmic Art", "Generative Art", "Data Visualization", "Glitch Aesthetics", "Datamoshing", "ANSI Art", "Shift JIS Art", "PETSCII", "Teletext Art",
+    "16-bit Sprite", "8-bit Sprite", "Chiptune Visualization", "Demoscene", "Tracker Interface", "Wireframe 3D", "Flat Shading", "Gouraud Shading", "Phong Shading", "Raytraced",
+    "Path Traced", "Radiosity", "Ambient Occlusion Pass", "Z-Brush Sculpt", "CAD Drawing", "Architectural Rendering", "Isometric Projection", "Orthographic Projection", "Exploded View", "Cutaway",
+    "Medical Illustration", "Botanical Illustration", "Zoological Illustration", "Cartography", "Topographic Map", "Star Chart", "Astrophotography", "Microphotography", "Electron Microscope", "Thermal Imaging",
+    "X-Ray", "MRI Scan", "Ultrasound", "Sonar Mapping", "Radar Imaging", "Lidar Scan", "Satellite Imagery", "Drone Photography", "Fisheye Lens", "Macro Lens",
+    "Tilt-Shift", "Bokeh", "Lens Flare", "Overexposed", "Underexposed", "High Contrast", "Low Contrast", "Soft Focus", "Vignette", "Film Grain",
+    "Cinematic", "Documentary Style", "Security Camera Footage", "Dashcam", "Bodycam", "GoPro Footage", "Found Footage", "Home Video", "Silent Film", "Technicolor",
+    "Kinetoscope", "Zoetrope", "Phenakistoscope", "Flipbook", "Storyboard", "Animatic", "Keyframe", "Inbetweening", "Rotoscoping", "Motion Capture",
+    "Puppetry", "Marionette", "Muppet Style", "Ventriloquist Dummy", "Animatronic", "Suitmation", "Kaiju Eiga", "Tokusatsu", "Machinima", "VTuber Avatar",
+    "Gothic Revival", "Brutalism", "Deconstructivism", "Postmodernism", "Futurism", "Suprematism", "De Stijl", "Magic Realism", "Social Realism", "Ashcan School",
+    "Hudson River School", "Pre-Raphaelite", "Tonalism", "Luminism", "Cloisonnism", "Synthetism", "Orphism", "Rayonism", "Vorticism", "Purism",
+    "Precisionism", "Regionalism", "Tachisme", "CoBrA", "Arte Povera", "Fluxus", "Mail Art", "Outsider Art", "Art Brut", "Folk Art",
+    "Tramp Art", "Prison Art", "Trench Art", "Nouveau Realisme", "Op Art", "Kinetic Art", "Systemic Art", "Hard-edge Painting", "Color Field", "Lyrical Abstraction",
+    "Neo-Expressionism", "Transavantgarde", "Figuration Libre", "Stuckism", "Remodernism", "Classical Realism", "Hyperrealism", "Superflat", "Kitsch", "Lowbrow",
+    "Gothic Lolita", "Visual Kei", "Decora", "Cyber Goth", "Industrial", "Rivethead", "Riot Grrrl", "Skater Punk", "Surf Culture", "Cholo Style",
+    "Afrofuturism", "Chicano Art", "Native American Ledger Art", "Inuit Art", "Aboriginal Dot Painting", "Maori Carving", "Polynesian Tattoo", "Ndebele House Painting", "Kente Cloth", "Mudcloth",
+    "Batik", "Shibori", "Ikat", "Tartan", "Houndstooth", "Paisley", "Damask", "Toile", "Chinoiserie", "Japonisme",
+    "Moorish Architecture", "Islamic Geometry", "Arabesque", "Celtic Knotwork", "Viking Runes", "Ogham", "Cuneiform", "Maya Script", "Egyptian Relief", "Sumerian Ziggurat",
+    "Minoan Fresco", "Etruscan Tomb Art", "Hellenistic Sculpture", "Roman Mosaic", "Early Christian Art", "Carolingian", "Ottonian", "Romanesque", "Rayonnant", "Flamboyant",
+    "Tudor Architecture", "Elizabethan", "Jacobean", "Palladian", "Georgian", "Federal Style", "Greek Revival", "Gothic Carpenter", "Stick Style", "Queen Anne Style",
+    "Shingle Style", "Richardson Romanesque", "Beaux-Arts", "City Beautiful Movement", "Prairie School", "Craftsman", "Bungalow", "Pueblo Revival", "Mission Revival", "Spanish Colonial",
+    "Googie", "Tiki Culture", "Space Age", "Atomic Age", "Raygun Gothic", "Cassette Futurism", "Y2K Aesthetic", "Frutiger Aero", "Webcore", "Weirdcore",
+    "Dreamcore", "Traumacore", "Cottagecore", "Goblincore", "Fairycore", "Dragoncore", "Knightcore", "Royalcore", "Piratecore", "Mermaidcore",
+    "Dark Academia", "Light Academia", "Chaotic Academia", "Art Hoe", "Vintage", "Retro", "Nostalgia", "Childhood", "Lullaby", "Nightmare"
   ];
 
   // --- APPLICATION LOGIC ---
