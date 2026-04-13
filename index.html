@@ -171,7 +171,6 @@
 </div>
 
 <script>
-  // --- MASSIVELY EXPANDED UNIQUE PARAMETERS ---
   const subjects = [
     "Astronaut", "Samurai", "Cyborg", "Wizard", "Detective", "Gargoyle", "AI Drone", "Ghost", "Pharaoh", "Time Traveler",
     "Vampire", "Clockwork Automaton", "Hacker", "Deep Sea Diver", "Alien Botanist", "Centaur", "Mad Scientist", "Knight", "Ninja", "Pirate",
@@ -201,7 +200,27 @@
     "Superhero", "Supervillain", "Sidekick", "Henchman", "Vigilante", "Mutant Scavenger", "Space Smuggler", "Galactic Senator", "Alien Ambassador", "Cyborg Assassin",
     "Street Urchin", "Beggar", "King", "Queen", "Prince", "Princess", "Duke", "Duchess", "Baron", "Peasant",
     "Gunslinger", "Sheriff", "Outlaw", "Saloon Girl", "Prospector", "Cavalry Officer", "Railroad Worker", "Pony Express Rider", "Bounty Hunter", "Snake Oil Salesman",
-    "Lumberjack", "Mountie", "Trapper", "Explorer", "Cartographer", "Mountaineer", "Spelunker", "Skydiver", "Deep Sea Fisherman", "Whaler"
+    "Lumberjack", "Mountie", "Trapper", "Explorer", "Cartographer", "Mountaineer", "Spelunker", "Skydiver", "Deep Sea Fisherman", "Whaler",
+    "Doctor", "Surgeon", "Car Mechanic", "Software Engineer", "Firefighter", "Police Officer", "Airline Pilot", "Architect", "Judge", "Journalist", 
+    "Lion", "Tiger", "Elephant", "Giraffe", "Zebra", "Kangaroo", "Hippopotamus", "Rhinoceros", "Moose", "Grey Wolf",
+    "Gnome Artificer", "Orc Warlord", "Troll Brawler", "Goblin Tinker", "Halfling Burglar", "Elven Archmage", "Dwarven Runesmith", "Tiefling Warlock", "Dragonborn Paladin", "Kenku Rogue", 
+    "Tabaxi Monk", "Githyanki Warrior", "Mind Flayer", "Beholder", "Lich King", "Vampire Lord", "Werewolf Alpha", "Swamp Hag", "Banshee Queen", "Fallen Angel", 
+    "Demonic Overlord", "Celestial Guardian", "Fire Elemental", "Ice Golem", "Earth Titan", "Wind Spirit", "Scrap-code Weaver", "Neon-smuggler", "Drone-jockey", "AI-whisperer", 
+    "Cyborg-merc", "Data-broker", "Corporate Ninja", "Orbital Marine", "Zero-G Mechanic", "Xeno-biologist", "Terraformer", "Asteroid Miner", "Quantum Hacker", "Chrononaut", 
+    "Interdimensional Traveler", "Multiverse Observer", "Exhausted Millennial", "Over-caffeinated Student", "Disgruntled Retail Worker", "HOA President", "Karen", "Hipster Barista", "Tech Bro", "Social Media Influencer", 
+    "Conspiracy Theorist", "Doomsday Prepper", "Used Car Salesman", "Door-to-door Vacuum Salesman", "Telemarketer", "Meter Maid", "Mall Cop", "Substitute Teacher", "Helicopter Parent", "Armchair Detective", 
+    "Couch Potato", "Fitness Guru", "Life Coach", "Motivational Speaker", "Stand-up Comedian", "Mime", "Street Musician", "Magician", "Clown", "Acrobat", 
+    "Lion Tamer", "Ringmaster", "Psychic Medium", "Ghost Hunter", "Ufologist", "Cryptozoologist", "Paleontologist", "Marine Biologist", "Meteorologist", "Geologist", 
+    "Astronomer", "Astrophysicist", "Nuclear Physicist", "Chemist", "Biochemist", "Geneticist", "Virologist", "Epidemiologist", "Cardiologist", "Pediatrician", 
+    "Veterinarian", "Zookeeper", "Park Ranger", "Game Warden", "Mafia Boss", "Hitman", "Private Investigator", "Double Agent", "Secret Agent", "Ronin", 
+    "Crusader", "Templar", "Inquisitor", "Witch Hunter", "Monster Hunter", "Exorcist", "Cleric", "Priest", "Nun", "Bishop", 
+    "Pope", "Cult Leader", "Zealot", "Prophet", "Seer", "Archmage", "Enchanter", "Illusionist", "Diviner", "Conjurer", 
+    "Abjurer", "Transmuter", "Evoker", "Minstrel", "Troubadour", "Fool", "Actor", "Director", "Producer", "Author", 
+    "Poet", "Playwright", "Novelist", "Reporter", "News Anchor", "Paparazzi", "Photographer", "Cameraman", "Sound Engineer", "Lighting Technician", 
+    "Roadie", "Groupie", "Fanboy", "Fangirl", "Otaku", "Gamer", "Streamer", "YouTuber", "Vlogger", "Blogger", 
+    "Podcaster", "Radio Host", "Singer", "Rapper", "Guitarist", "Drummer", "Bassist", "Keyboardist", "Pianist", "Violinist", 
+    "Cellist", "Flutist", "Trumpeter", "Saxophonist", "Conductor", "Composer", "Choreographer", "Dancer", "Ballerina", "Gymnast", 
+    "Athlete", "Coach", "Referee", "Umpire", "Commentator", "Sports Analyst", "Sentient Grimoire", "Floating Orb", "Cursed Amulet", "Living Shadow"
   ];
 
   const locations = [
@@ -228,10 +247,36 @@
     "Golf Course Green", "Tennis Court", "Swimming Pool", "Skatepark", "Ice Rink", "Ski Slope", "Surf Break", "Climbing Wall", "Gymnasium", "Yoga Studio",
     "Library Archives", "Museum Exhibit", "Art Gallery", "Planetarium", "Aquarium Tunnel", "Zoo Enclosure", "Botanical Garden", "Cemetery", "Mausoleum", "Catacomb",
     "Toy Store", "Candy Shop", "Antique Store", "Pawn Shop", "Thrift Store", "Hardware Store", "Bookstore", "Record Store", "Comic Book Shop", "Arcade",
-    "Carnival Midway", "Circus Tent", "Magic Show Stage", "Puppet Theater", "Drive-Thru Window", "Car Wash", "Gas Station", "Mechanic Garage", "Junkyard", "Scrap Metal Press"
+    "Carnival Midway", "Circus Tent", "Magic Show Stage", "Puppet Theater", "Drive-Thru Window", "Car Wash", "Gas Station", "Mechanic Garage", "Junkyard", "Scrap Metal Press",
+    "Barcelona", "Giza Pyramids", "Himalayas", "Eiffel Tower", "Machu Picchu", "Taj Mahal", "Great Wall of China", "Stonehenge", "Grand Canyon", "Mount Everest", 
+    "Louvre Museum", "Times Square", "Sydney Opera House", "Angkor Wat", "Acropolis of Athens", "Petra", "Burj Khalifa", "Niagara Falls", "Central Park", "Alcatraz Island",
+    "Server Room", "Walk-in Freezer", "Changing Room", "Lighthouse Keep", "Windmill Interior", "Water Tower Roof", "Oil Rig Platform", "Construction Crane", "Lumber Mill Sawroom", "Steel Mill Foundry", 
+    "Mangrove Swamp Deep", "Taiga Forest Edge", "Sand Dune Peak", "Oasis Spring", "Tidal Pool Micro-ecosystem", "Hot Spring Bath", "Mud Volcano Crater", "Limestone Cave System", "Cenote Depths", "Atoll Lagoon", 
+    "Limbo Plane", "Purgatory Waiting Room", "Valhalla Mead Hall", "Elysium Fields", "Tartarus Pit", "Nirvana State", "The Akashic Records Library", "Colosseum Arena", "Christ the Redeemer Statue", "Chichen Itza Pyramid", 
+    "Mount Fuji Summit", "Victoria Falls Edge", "Angkor Wat Temple", "Golden Gate Bridge Cable", "Mount Rushmore Face", "Kilimanjaro Peak", "Dyson Sphere Surface", "O'Neill Cylinder Interior", "Generation Ship Bridge", "Mars Rover Camera View", 
+    "Lunar Lava Tube Cave", "Asteroid Mine Shaft", "Dragon's Hoard Cave", "Faerie Court Throne Room", "Goblin Warren Tunnels", "Necromancer's Spire Top", "Dwarven Forge Hearth", "Merfolk City Square", "Giant's Castle in the Clouds", "World Tree Roots", 
+    "Inside a Guitar", "Under the Bed", "Inside a Vending Machine", "On a Coin Surface", "In a Snowglobe", "Abandoned Amusement Park", "Haunted Asylum", "Creepy Motel", "Highway Rest Stop", "Truck Stop Diner", 
+    "Deserted Highway", "Overgrown Cemetery", "Forgotten Crypt", "Sunken Shipwreck", "Iceberg Core", "Volcano Magma Chamber", "Cloud Castle", "Floating Market", "Underground Bazaar", "Secret Society Lodge", 
+    "Ninja Village", "Samurai Dojo", "Monastery Atop a Mountain", "Cliffside Village", "Treehouse Canopy", "Underground Bunker", "Fallout Shelter", "Missile Silo", "Military Base", "Area 51 Hangar", 
+    "Secret Government Lab", "Alien Spaceship Interior", "UFO Crash Site", "Meteor Crater", "Crop Circle Field", "Stone Circle", "Druid Grove", "Fairy Ring", "Witch's Coven", "Vampire Lair", 
+    "Werewolf Den", "Zombie Infested City", "Post-Apocalyptic Wasteland", "Mutant Scrapyard", "Cyberpunk Slums", "Neon-Lit Megacity", "Corporate Arcology", "Hacker Hideout", "VR Chatroom", "Matrix Construct", 
+    "Deep Web Forum", "Darknet Market", "Server Farm", "Data Center", "Space Elevator", "Orbital Habitat", "Lunar Colony", "Martian Terraforming Station", "Venusian Cloud City", "Jupiter Gas Miner", 
+    "Saturn Ring Station", "Pluto Outpost", "Deep Space Relay", "Wormhole Entrance", "Intergalactic Hub", "Alien Homeworld", "Ruined Alien City", "Precursor Artifact", "Dyson Swarm", "Stellar Engine", 
+    "Neutron Star Surface", "Pulsar Beam", "Nebula Core", "Supernova Remnant", "Galaxy Center", "Edge of the Observable Universe", "Multiverse Nexus", "Alternate Dimension", "Parallel Universe", "Mirror World", 
+    "Upside Down", "Shadow Realm", "Spirit World", "Astral Plane", "Ethereal Plane", "Elemental Plane of Fire", "Elemental Plane of Water", "Elemental Plane of Earth", "Elemental Plane of Air", "Positive Energy Plane", 
+    "Negative Energy Plane", "Feywild", "Shadowfell", "Nine Hells", "Abyss", "Mount Celestia", "Mechanus", "Sigil City of Doors", "Hogwarts Castle", "Jedi Temple", 
+    "Death Star", "Tardis Interior", "Bakers Street 221B", "Batcave", "Fortress of Solitude", "X-Mansion", "Avengers Tower", "Sanctum Sanctorum", "Hogwarts Great Hall", "Diagon Alley", 
+    "Hobbiton", "Rivendell", "Minas Tirith", "Mordor", "Mount Doom", "Willy Wonka's Chocolate Factory", "Oz Emerald City", "Wonderland", "Neverland", "Narnia",
+    "London", "Paris", "Tokyo", "Washington D.C.", "Berlin", "Rome", "Madrid", "Beijing", "Moscow", "Ottawa",
+    "Canberra", "Brasilia", "Buenos Aires", "Cairo", "Cape Town", "New Delhi", "Seoul", "Bangkok", "Hanoi", "Jakarta",
+    "Riyadh", "Ankara", "Athens", "Stockholm", "Oslo", "Copenhagen", "Helsinki", "Warsaw", "Budapest", "Prague",
+    "Vienna", "Amsterdam", "Brussels", "Lisbon", "Dublin", "Wellington", "Bogota", "Lima", "Santiago", "Caracas",
+    "Havana", "Mexico City", "Nairobi", "Addis Ababa", "Dakar", "Accra", "Manila", "Kuala Lumpur", "Singapore", "Taipei",
+    "Jerusalem", "Tehran", "Baghdad", "Kabul", "Islamabad", "Reykjavik", "Kiev", "Bucharest", "Sofia", "Belgrade"
   ];
 
   const actions = [
+    // Original 300
     "Meditating", "Fighting", "Brewing coffee", "Reading a map", "Hacking a mainframe", "Juggling", "Performing surgery", "Forging a sword", "Dancing", "Deciphering code",
     "Taming a beast", "Planting seeds", "Defusing a bomb", "Painting a mural", "Tuning an instrument", "Casting a spell", "Piloting a mech", "Repairing an engine", "Cooking a meal", "Scavenging for parts",
     "Writing a letter", "Playing chess", "Interrogating a suspect", "Picking a lock", "Sneaking through shadows", "Climbing a cliff", "Swimming with sharks", "Flying a kite", "Assembling a weapon", "Harvesting crops",
@@ -255,7 +300,35 @@
     "Biting an apple", "Sipping coffee", "Chugging water", "Eating a sandwich", "Licking an ice cream cone", "Using chopsticks", "Cutting steak", "Stirring soup", "Sprinkling salt", "Squeezing a lemon",
     "Opening a jar", "Peeling a banana", "Cracking an egg", "Kneading dough", "Flipping a pancake", "Grating cheese", "Slicing bread", "Pouring wine", "Toasting glasses", "Washing hands",
     "Opening an umbrella", "Putting on sunglasses", "Zipping up a jacket", "Tying a necktie", "Putting on a hat", "Taking off boots", "Buckling a seatbelt", "Adjusting a rearview mirror", "Turning a steering wheel", "Honking a horn",
-    "Changing a tire", "Checking engine oil", "Washing a car", "Pumping up a bicycle tire", "Locking a door", "Turning a key", "Knocking on a door", "Ringing a doorbell", "Looking through a peephole", "Opening a window"
+    "Changing a tire", "Checking engine oil", "Washing a car", "Pumping up a bicycle tire", "Locking a door", "Turning a key", "Knocking on a door", "Ringing a doorbell", "Looking through a peephole", "Opening a window",
+    "Filing taxes while levitating", "Commuting on a dragon", "Microwaving a potion", "Scrolling a crystal ball", "Parallel parking a spaceship", "Walking a hellhound", "Renewing a wizard license", "Updating a grimoire", "Waiting in line for the oracle", "Binge-watching prophecies",
+    "Sweeping goblin dust", "Unclogging a portal", "Ordering a coffee in Elvish", "Texting a ghost", "Mowing the astral plane", "Carpooling with demons", "Assembling cursed furniture", "Untangling fairy lights", "Baking enchanted cookies", "Negotiating with a swamp hag",
+    "Feeding a gargoyle", "Plunging a dimensional rift", "Canceling a dark pact", "Polishing a magic wand", "Recycling cursed amulets", "Ironing a superhero cape", "Paying rent with gold coins", "Juggling flaming swords", "Taking a dragon to the vet", "Rebooting a magical artifact",
+    "Troubleshooting a curse", "Swiping right on a vampire", "Vlogging a dungeon crawl", "Live-streaming a boss fight", "Podcasting from the underworld", "Reviewing a haunted hotel", "Teleporting to the grocery store", "Summoning a pizza delivery", "Casting a spell of minor inconvenience", "Enchanting a toaster",
+    "Defusing a magic bomb", "Stealing a time machine", "Applying sunscreen to a zombie", "Flossing with unicorn hair", "Debating a sphinx", "Translating ancient runes", "Hailing a flying cab", "Renewing a guild membership", "Brewing a love potion", "Checking the astrological weather",
+    "Packing for a quest", "Decluttering a dragon hoard", "Organizing potion bottles", "Watering a man-eating plant", "Teaching a golem to dance", "Playing fetch with a cerberus", "Untangling a kraken", "Calming a panicked banshee", "Filing paperwork for a prophecy", "Validating a parking ticket in Hell",
+    
+    // 200 NEW Actions
+    "Debugging legacy code", "Folding a fitted sheet", "Renewing a driver's license", "Waiting for the microwave", "Clearing browser history", "Resetting a forgotten password", "Unplugging a router", "Doomscrolling", "Writing a passive-aggressive email", "Attending a zoom meeting", 
+    "Muting a microphone", "Changing a Zoom background", "Trying to find the TV remote", "Untangling headphones", "Putting USB in the wrong way", "Flipping the USB and trying again", "Stepping on a Lego", "Stubbing a toe", "Searching for lost keys", "Forgetting why you entered a room", 
+    "Talking to a rubber duck", "Watering artificial plants", "Burning toast", "Dropping a phone on your face", "Putting together a 1000-piece puzzle", "Knitting a sweater for a snake", "Painting by numbers", "Color-coding a bookshelf", "Reorganizing a spice rack", "Defrosting a freezer", 
+    "Trying to open plastic packaging", "Assembling a bookshelf backwards", "Dropping keys down a storm drain", "Chasing a runaway paper in the wind", "Trying to fold a map", "Getting a shopping cart with a squeaky wheel", "Swiping left on a dating app", "Leaving a voicemail", "Writing a grocery list", "Forgetting the grocery list at home", 
+    "Trying to remember a song name", "Counting ceiling tiles", "Watching paint dry", "Watching grass grow", "Staring blankly into the fridge", "Trying to catch a fly with chopsticks", "Blowing on a hot soup", "Trying to whistle with crackers in mouth", "Eating cereal out of a mug", "Microwaving fish in the office",
+    "Calibrating a warp drive", "Scrubbing the holodeck", "Changing the oil in a mech", "Recharging a lightsaber", "Arguing with a navigation AI", "Dodging an asteroid", "Mining for space crypto", "Smuggling alien spices", "Updating a cyborg limb", "Rebooting a sentient android", 
+    "Defragmenting a robot brain", "Translating alien slang", "Hacking a vending machine", "Installing a cybernetic eye", "Polishing a chrome skull", "Hotwiring a hovercar", "Escaping a tractor beam", "Fixing a hyperdrive leak", "Rerouting auxiliary power", "Bypassing mainframe security", 
+    "Uploading a virus", "Downloading a martial art", "Tuning a sonic screwdriver", "Defusing an antimatter bomb", "Calibrating a plasma rifle", "Feeding a pet xenomorph", "Walking a robotic dog", "Taking a moonwalk", "Planting a flag on Mars", "Floating in zero gravity", 
+    "Patching a spacesuit leak", "Analyzing a strange monolith", "Abducting a cow", "Creating crop circles", "Communicating with a mothership", "Fleeing from a cyber-assassin", "Bartering with space pirates", "Searching for the chosen one", "Delivering a holographic message", "Exploring an abandoned space station", 
+    "Cloning a dinosaur", "Splicing mutant DNA", "Escaping a secret laboratory", "Dissecting an alien frog", "Synthesizing a cure", "Causing a containment breach", "Pressing the big red button", "Aborting a launch sequence", "Teleporting into a wall", "Experiencing a time loop",
+    "Polishing a suit of armor", "Sharpening a battleaxe", "Tuning a lute", "Drawing a bowstring", "Setting a bear trap", "Picking a dungeon lock", "Disarming a poison dart trap", "Looting a treasure chest", "Haggling with a merchant", "Bribing a town guard", 
+    "Drinking a health potion", "Eating a cheese wheel mid-fight", "Reading an Elder Scroll", "Shouting at a dragon", "Taming a wild griffin", "Riding a giant eagle", "Exploring a haunted crypt", "Running from a rolling boulder", "Swinging across a chasm", "Dodging a pendulum blade", 
+    "Casting magic missile", "Counterspelling a wizard", "Summoning a water elemental", "Banishing a ghost", "Exorcising a demon", "Enchanting a ring", "Cursing a rival", "Brewing a poison", "Gathering herbs", "Mining Mithril", 
+    "Forging a magical sword", "Carving a wooden totem", "Praying at a shrine", "Making an offering to the gods", "Deciphering an ancient map", "Following a treasure compass", "Digging up a chest", "Burying pirate gold", "Swabbing the deck", "Hoisting the mainsail", 
+    "Walking the plank", "Firing a cannon", "Boarding an enemy ship", "Keelhauling a traitor", "Parleying with a captain", "Navigating by the stars", "Surviving a shipwreck", "Stranded on a desert island", "Sending a message in a bottle", "Searching for El Dorado",
+    "Filing a grievance with the Dark Lord", "Auditing a wizard's taxes", "Organizing a villain's lair", "Cleaning a crystal ball", "Vacuuming a flying carpet", "Dusting a spellbook", "Parallel parking a UFO", "Towing a broken time machine", "Issuing a speeding ticket to a superhero", "Giving a goblin a makeover", 
+    "Teaching a troll table manners", "Explaining internet slang to a vampire", "Helping a mummy wrap itself", "Untangling a medusa's hair", "Brushing a unicorn's mane", "Shoeing a centaur", "Meal-prepping for a minotaur", "Defrosting a yeti", "Shaving a werewolf", "Walking a cerberus", 
+    "Playing fetch with a hellhound", "Feeding pigeons in the underworld", "Painting a rainbow in grayscale", "Knitting a scarf for a gargoyle", "Teaching a robot to love", "Explaining water to a fire elemental", "Playing charades with an invisible man", "Arm wrestling a cyborg", "Thumb wrestling a titan", "Staring down a basilisk", 
+    "Flirting with a siren", "Having a tea party with ghosts", "Inviting a vampire inside", "Hiding from a slasher", "Surviving a horror movie", "Writing a will in blood", "Signing a contract with the devil", "Reading the fine print of a curse", "Suing a necromancer", "Mediating a dispute between elves and dwarves", 
+    "Unionizing the dungeon minions", "Boycotting the evil empire", "Protest marching on the dark tower", "Giving a motivational speech to an army of the dead", "Performing stand-up comedy for orcs", "Juggling dragon eggs", "Balancing a potion on your nose", "Unicycling across a tightrope over a volcano", "Attempting a backflip in full plate armor", "Accidentally summoning Cthulhu"
   ];
 
   const styles = [
@@ -323,8 +396,23 @@
 
   let isSpinning = false;
 
-  function getRandomItem(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+  // New Cryptographically Secure Random Function
+  function getSecureRandomItem(arr) {
+    const randomBuffer = new Uint32Array(1);
+    window.crypto.getRandomValues(randomBuffer);
+    const randomIndex = randomBuffer[0] % arr.length;
+    return arr[randomIndex];
+  }
+
+  // Load history safely (in case iframes block localStorage)
+  let spinHistory = [];
+  try {
+    const storedHistory = localStorage.getItem('creativeSlotHistory');
+    if (storedHistory) {
+      spinHistory = JSON.parse(storedHistory);
+    }
+  } catch (e) {
+    console.warn("LocalStorage blocked. Caching disabled for this session.");
   }
 
   lever.addEventListener('click', () => {
@@ -335,47 +423,80 @@
     lever.innerText = "PROCESSING...";
     resultText.value = "";
     
+    // --- PRE-CALCULATE A GUARANTEED UNIQUE SPIN ---
+    let targetValues = [];
+    let comboString = "";
+    let attempts = 0;
+
+    do {
+      targetValues = wheels.map(arr => getSecureRandomItem(arr));
+      comboString = targetValues.join(", ");
+      attempts++;
+    } while (spinHistory.includes(comboString) && attempts < 100);
+
+    // Save unique combo to local storage
+    spinHistory.push(comboString);
+    if (spinHistory.length > 1000) spinHistory.shift(); // Keep cache limited to last 1000 spins
+    
+    try {
+      localStorage.setItem('creativeSlotHistory', JSON.stringify(spinHistory));
+    } catch (e) {}
+
+    // --- EXECUTE VISUAL SPIN ANIMATION ---
     const intervals = [];
-    const finalValues = [];
     // Staggered stop times so wheels stop one by one (1s, 1.5s, 2s, 2.5s)
     const stopTimes = [1000, 1500, 2000, 2500];
 
-    // Start rapid spinning animation
+    // Start rapid spinning animation using standard Math.random for visual speed
     slotElements.forEach((slot, index) => {
       intervals[index] = setInterval(() => {
-        slot.innerText = getRandomItem(wheels[index]);
+        slot.innerText = wheels[index][Math.floor(Math.random() * wheels[index].length)];
       }, 60); 
     });
 
-    // Stop wheels according to schedule
+    // Stop wheels according to schedule and assign the pre-calculated secure values
     slotElements.forEach((slot, index) => {
       setTimeout(() => {
         clearInterval(intervals[index]);
-        const finalValue = getRandomItem(wheels[index]);
-        slot.innerText = finalValue;
-        finalValues[index] = finalValue;
+        slot.innerText = targetValues[index];
 
         // When the final wheel stops, wrap up
         if (index === slotElements.length - 1) {
           isSpinning = false;
           lever.disabled = false;
           lever.innerText = "EXECUTE SPIN //_";
-          resultText.value = finalValues.join(", ");
+          resultText.value = comboString;
         }
       }, stopTimes[index]); 
     });
   });
 
-  // Copy to clipboard logic
-  copyBtn.addEventListener('click', () => {
+  // Copy to clipboard logic with Iframe Fallback
+  copyBtn.addEventListener('click', async () => {
     if (!resultText.value) return;
-    navigator.clipboard.writeText(resultText.value).then(() => {
-      const originalText = copyBtn.innerText;
+    
+    const originalText = copyBtn.innerText;
+    const showSuccess = () => {
       copyBtn.innerText = "✔️ COPIED";
       setTimeout(() => copyBtn.innerText = originalText, 2000);
-    }).catch(err => {
-      console.error('Failed to copy: ', err);
-    });
+    };
+
+    try {
+      await navigator.clipboard.writeText(resultText.value);
+      showSuccess();
+    } catch (err) {
+      try {
+        resultText.select();
+        resultText.setSelectionRange(0, 99999); 
+        document.execCommand('copy');
+        showSuccess();
+        window.getSelection().removeAllRanges(); 
+      } catch (fallbackErr) {
+        console.error('Both copy methods failed: ', fallbackErr);
+        copyBtn.innerText = "❌ ERROR";
+        setTimeout(() => copyBtn.innerText = originalText, 2000);
+      }
+    }
   });
 </script>
 </body>
